@@ -3,9 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Text Editor</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bold-text {
+          font-weight: bold;
+        }
+      </style>
 </head>
 <body>
-    
+    <header>
+        <h1 class="text-center text-5xl font-medium my-10 text-red-400">My Awesome Text Editor</h1>
+    </header>
+    <main>
+        <!-- Text Editor -->
+    <section class="container mx-auto my-16">
+        <div class="bg-[#ffa8a8] p-7">
+            <div class="navbar ">
+                <!-- Start Button -->
+                <div class="navbar-start">
+                    <!-- btn-1 Bold -->
+                    <button id="bold-btn" class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-bold fa-2xl"></i>
+                      </button>
+                      <!-- btn-2 italic -->
+                      <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-italic fa-2xl"></i>
+                      </button>
+                      <!-- btn-1 underline -->
+                      <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-underline fa-2xl"></i>
+                      </button>
+                </div>
+
+                <!-- Center Button -->
+                <div class="navbar-center">
+                     <!-- btn-1 left align -->
+                     <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-align-left fa-2xl"></i>
+                      </button>
+                      <!-- btn-2 center align -->
+                      <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-align-center fa-2xl"></i>
+                      </button>
+                      <!-- btn-3 right align -->
+                      <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-align-right fa-2xl"></i>
+                      </button>
+                      <!-- btn-4 Justify align -->
+                      <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-align-justify fa-2xl"></i>
+                      </button>
+                </div>
+
+                    <!-- End Button -->
+                <div class="navbar-end">
+                    <!-- btn-1 Number -->
+                    <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-9 fa-2xl"></i>
+                      </button>
+                      <!-- btn-2 text -->
+                      <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-font fa-2xl"></i>
+                      </button>
+                      <!-- btn-1 color -->
+                      <button class="btn btn-ghost btn-circle">
+                        <i class="fa-solid fa-palette fa-2xl" style="color: #00bceb;"></i>
+                      </button>
+                </div>
+            </div>
+
+            <!-- Text area  -->
+            <div>
+                    <textarea id="text-area" class="border-2 p-2 border-[#00bceb]" name=""  cols="162" rows="20" placeholder="Write Your Text To Edit"></textarea>
+            </div>
+                  
+            </div>
+
+         <script>
+            document.getElementById('bold-btn').addEventListener('click',function(){
+                //console.log('I got Cliked bold')
+                const textareaValu=document.getElementById('text-area');
+                const getValueTextArea=textareaValu.value;
+                 //getValueTextArea.style.fontSize='32px';
+            })
+         </script>
+
+        </section>
+    </main>
 </body>
 </html>
