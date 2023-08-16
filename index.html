@@ -63,12 +63,11 @@
                 <div class="navbar-end">
                     <!-- btn-1 Number -->
                     <button class="btn btn-ghost btn-circle">
-                        <i class="fa-solid fa-9 fa-2xl"></i>
-                        
+                        <input class="w-10 text-[#ffa8a8]" value="12" type="number" name="" id="">
                       </button>
                       <!-- btn-2 text -->
                       <button class="btn btn-ghost btn-circle">
-                        <i class="fa-solid fa-font fa-2xl"></i>
+                        <p class="text-xl">A<span class="text-xl lowercase">a</span> </p>
                       </button>
                       <!-- btn-3 color -->
                       <button  class="btn btn-ghost btn-circle">
@@ -83,77 +82,15 @@
             </div>
                   
             </div>
-
-        
+   
 
         </section>
     </main>
 
     <script>
-      //Font-Styles
-      //bold button
-        document.getElementById('bold-btn').addEventListener('click',function(){
-            //console.log('I got Cliked bold')
-           
-              const textareaValu=document.getElementById('text-area');
-            textareaValu.style.fontWeight = 'bold'
-            
-            
-            //const getValueTextArea=textareaValu.value;
-             //getValueTextArea.style.fontSize='32px';
-        });
-      //italic button
-      document.getElementById('italic-btn').addEventListener('click',function(){
-        const italicToTextAreValue=document.getElementById('text-area');
-        italicToTextAreValue.style.fontStyle="italic";
-      })
-      //underLine Button
-      document.getElementById('under-line').addEventListener('click',function(){
-        const underlineTextareaValue=document.getElementById('text-area');
-        underlineTextareaValue.style.textDecoration="underline";
-      })
-
-      //text-align
-
-     //left-align
-     document.getElementById('left-align').addEventListener('click',function(){
-      const leftTextAlign=document.getElementById('text-area');
-      leftTextAlign.style.textAlign='left'
-     })
-     //left-center
-     document.getElementById('center-align').addEventListener('click',function(){
-      const leftTextAlign=document.getElementById('text-area');
-      leftTextAlign.style.textAlign='center'
-     })
-     //left-right
-     document.getElementById('right-align').addEventListener('click',function(){
-      const leftTextAlign=document.getElementById('text-area');
-      leftTextAlign.style.textAlign='right'
-     })
-     //left-justify
-     document.getElementById('justify-align').addEventListener('click',function(){
-      const leftTextAlign=document.getElementById('text-area');
-      leftTextAlign.style.textAlign='justify'
-     })
-
-     //color number and text-pickers
-    
-     colorPicker.addEventListener("input", function() {
-
-      const textarea = document.getElementById("text-area");
-      const colorPicker = document.getElementById("colorPicker");
-
-      const selectedColor = colorPicker.value;
-      textarea.style.color = selectedColor;
-     });
-    
-
- 
-
-
-
-
      </script>
+
+     <script src="editor.js"></script>
 
 </body>
 </html>

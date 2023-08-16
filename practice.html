@@ -1,42 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Text Editor</title>
+  <style>
+    #myText {
+      font-size: 16px; /* Initial font size */
+    }
+  </style>
 </head>
 <body>
-    <button id="bold-btn">Bold</button>
-    <button id="italic-btn">Italic</button>
-    <textarea id="text-area"></textarea>
+    <textarea name="" id="myText" cols="30" rows="10"></textarea>
+  
+  <input type="number" id="fontSizeInput" value="16"> <!-- Number input to set font size -->
+  <button id="increaseButton">Increase Text Size</button>
 
-    <script>
-        const boldButton = document.getElementById('bold-btn');
-        const italicButton = document.getElementById('italic-btn');
-        const textArea = document.getElementById('text-area');
+  <script>
+    const increaseButton = document.getElementById('increaseButton');
+    const fontSizeInput = document.getElementById('fontSizeInput');
+    const myText = document.getElementById('myText');
 
-        boldButton.addEventListener('click', () => {
-            toggleFormatting('<strong>');
-        });
+    increaseButton.addEventListener('click', () => {
+      const newSize = parseFloat(fontSizeInput.value); // Get the font size value from the input
 
-        italicButton.addEventListener('click', () => {
-            toggleFormatting('<em>');
-        });
-
-        function toggleFormatting(tag) {
-            const start = textArea.selectionStart;
-            const end = textArea.selectionEnd;
-            const selectedText = textArea.value.substring(start, end);
-
-            if (selectedText.includes(tag)) {
-                const newText = textArea.value.replace(tag, '').replace(tag.replace('<', '</'), '');
-
-                textArea.value = newText;
-            } else {
-                const formattedText = tag + selectedText + tag.replace('<', '</');
-                const newText = textArea.value.substring(0, start) + formattedText + textArea.value.substring(end);
-
-                textArea.value = newText;
-            }
-        }
-    </script>
+      if (!isNaN(newSize)) {
+        myText.style.fontSize = newSize + 'px'; // Apply the new font size
+      }
+    });
+  </script>
 </body>
 </html>
