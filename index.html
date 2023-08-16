@@ -30,11 +30,11 @@
                         <i class="fa-solid fa-bold fa-2xl"></i>
                       </button>
                       <!-- btn-2 italic -->
-                      <button class="btn btn-ghost btn-circle">
+                      <button id="italic-btn" class="btn btn-ghost btn-circle">
                         <i class="fa-solid fa-italic fa-2xl"></i>
                       </button>
                       <!-- btn-1 underline -->
-                      <button class="btn btn-ghost btn-circle">
+                      <button id="under-line" class="btn btn-ghost btn-circle">
                         <i class="fa-solid fa-underline fa-2xl"></i>
                       </button>
                 </div>
@@ -42,19 +42,19 @@
                 <!-- Center Button -->
                 <div class="navbar-center">
                      <!-- btn-1 left align -->
-                     <button class="btn btn-ghost btn-circle">
+                     <button id="left-align" class="btn btn-ghost btn-circle">
                         <i class="fa-solid fa-align-left fa-2xl"></i>
                       </button>
                       <!-- btn-2 center align -->
-                      <button class="btn btn-ghost btn-circle">
+                      <button id="center-align" class="btn btn-ghost btn-circle">
                         <i class="fa-solid fa-align-center fa-2xl"></i>
                       </button>
                       <!-- btn-3 right align -->
-                      <button class="btn btn-ghost btn-circle">
+                      <button id="right-align" class="btn btn-ghost btn-circle">
                         <i class="fa-solid fa-align-right fa-2xl"></i>
                       </button>
                       <!-- btn-4 Justify align -->
-                      <button class="btn btn-ghost btn-circle">
+                      <button id="justify-align" class="btn btn-ghost btn-circle">
                         <i class="fa-solid fa-align-justify fa-2xl"></i>
                       </button>
                 </div>
@@ -64,32 +64,90 @@
                     <!-- btn-1 Number -->
                     <button class="btn btn-ghost btn-circle">
                         <i class="fa-solid fa-9 fa-2xl"></i>
+                        
                       </button>
                       <!-- btn-2 text -->
                       <button class="btn btn-ghost btn-circle">
                         <i class="fa-solid fa-font fa-2xl"></i>
                       </button>
-                      <!-- btn-1 color -->
-                      <button class="btn btn-ghost btn-circle">
-                        <i class="fa-solid fa-palette fa-2xl" style="color: #00bceb;"></i>
+                      <!-- btn-3 color -->
+                      <button  class="btn btn-ghost btn-circle">
+                        <input type="color" id="colorPicker" >
                       </button>
                 </div>
             </div>
 
             <!-- Text area  -->
             <div>
-                    <textarea id="text-area" class="border-2 p-2 border-[#00bceb]" name=""  cols="162" rows="20" placeholder="Write Your Text To Edit"></textarea>
+                    <textarea id="text-area" class="border-2 p-2   border-[#00bceb]" name=""  cols="162" rows="20" placeholder="Write Your Text To Edit"></textarea>
             </div>
                   
             </div>
 
          <script>
+          //Font-Styles
+          //bold button
             document.getElementById('bold-btn').addEventListener('click',function(){
                 //console.log('I got Cliked bold')
-                const textareaValu=document.getElementById('text-area');
-                const getValueTextArea=textareaValu.value;
+               
+                  const textareaValu=document.getElementById('text-area');
+                textareaValu.style.fontWeight = 'bold'
+                
+                
+                //const getValueTextArea=textareaValu.value;
                  //getValueTextArea.style.fontSize='32px';
-            })
+            });
+          //italic button
+          document.getElementById('italic-btn').addEventListener('click',function(){
+            const italicToTextAreValue=document.getElementById('text-area');
+            italicToTextAreValue.style.fontStyle="italic";
+          })
+          //underLine Button
+          document.getElementById('under-line').addEventListener('click',function(){
+            const underlineTextareaValue=document.getElementById('text-area');
+            underlineTextareaValue.style.textDecoration="underline";
+          })
+
+          //text-align
+
+         //left-align
+         document.getElementById('left-align').addEventListener('click',function(){
+          const leftTextAlign=document.getElementById('text-area');
+          leftTextAlign.style.textAlign='left'
+         })
+         //left-center
+         document.getElementById('center-align').addEventListener('click',function(){
+          const leftTextAlign=document.getElementById('text-area');
+          leftTextAlign.style.textAlign='center'
+         })
+         //left-right
+         document.getElementById('right-align').addEventListener('click',function(){
+          const leftTextAlign=document.getElementById('text-area');
+          leftTextAlign.style.textAlign='right'
+         })
+         //left-justify
+         document.getElementById('justify-align').addEventListener('click',function(){
+          const leftTextAlign=document.getElementById('text-area');
+          leftTextAlign.style.textAlign='justify'
+         })
+
+         //color number and text-pickers
+        
+         colorPicker.addEventListener("input", function() {
+
+          const textarea = document.getElementById("text-area");
+          const colorPicker = document.getElementById("colorPicker");
+
+          const selectedColor = colorPicker.value;
+          textarea.style.color = selectedColor;
+         });
+        
+
+     
+
+
+
+
          </script>
 
         </section>

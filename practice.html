@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  .bold-text {
-    font-weight: bold;
-  }
-</style>
+    <title>Simple Text Editor</title>
 </head>
 <body>
+    <button id="bold-btn">Bold</button>
+    <button id="italic-btn">Italic</button>
+    <textarea id="text-area"></textarea>
 
-<textarea id="myTextarea">This is some text.</textarea>
-<button id="bold-btn">Bold</button>
+    <script>
+        const boldButton = document.getElementById('bold-btn');
+        const italicButton = document.getElementById('italic-btn');
+        const textArea = document.getElementById('text-area');
 
-<script src="practice.js"></script>
+        boldButton.addEventListener('click', () => {
+            toggleFormatting('<strong>');
+        });
 
+        italicButton.addEventListener('click', () => {
+            toggleFormatting('<em>');
+        });
+
+        function toggleFormatting(tag) {
+            const start = textArea.selectionStart;
+            const end = textArea.selectionEnd;
+            const selectedText = textArea.value.substring(start, end);
+
+            if (selectedText.includes(tag)) {
+                const newText = textArea.value.replace(tag, '').replace(tag.replace('<', '</'), '');
+
+                textArea.value = newText;
+            } else {
+                const formattedText = tag + selectedText + tag.replace('<', '</');
+                const newText = textArea.value.substring(0, start) + formattedText + textArea.value.substring(end);
+
+                textArea.value = newText;
+            }
+        }
+    </script>
 </body>
 </html>
