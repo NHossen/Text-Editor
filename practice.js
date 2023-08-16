@@ -17,4 +17,50 @@ document.addEventListener("DOMContentLoaded", function() {
       textarea.selectionEnd = end + boldText.length;
     });
   });
+
   
+  let iscliked=false;
+  document.getElementById('bold-btn').addEventListener('click',function(){
+      //console.log('I got Cliked bold')
+      if(!iscliked){
+
+        const textareaValu=document.getElementById('text-area');
+        textareaValu.style.fontWeight = 'bold'
+        iscliked=true;
+      }else{
+        const textareaValu=document.getElementById('text-area');
+        textareaValu.style.fontWeight = ''
+        iscliked=false;
+      }
+      
+      
+      
+      //const getValueTextArea=textareaValu.value;
+       //getValueTextArea.style.fontSize='32px';
+  });
+//italic button
+document.getElementById('italic-btn').addEventListener('click',function(){
+  if(!iscliked){
+    const italicToTextAreValue=document.getElementById('text-area');
+  italicToTextAreValue.style.fontStyle="italic";
+  iscliked=true;
+  }else{
+    const italicToTextAreValue=document.getElementById('text-area');
+  italicToTextAreValue.style.fontStyle="";
+  iscliked=false;
+  }
+  
+})
+//underLine Button
+document.getElementById('under-line').addEventListener('click',function(){
+  if(!iscliked){
+    const underlineTextareaValue=document.getElementById('text-area');
+  underlineTextareaValue.style.textDecoration="underline";
+  iscliked=true
+  }else{
+    const underlineTextareaValue=document.getElementById('text-area');
+    underlineTextareaValue.style.textDecoration="";
+    iscliked=false
+  }
+  
+})
